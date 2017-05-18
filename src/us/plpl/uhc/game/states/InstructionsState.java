@@ -7,7 +7,11 @@ import org.bukkit.scheduler.BukkitScheduler;
 import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
-
+/**
+ * 
+ * @author Justin Brubaker
+ *
+ */
 public class InstructionsState extends BasicState {
 
 	public InstructionsState() {

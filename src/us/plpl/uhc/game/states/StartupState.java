@@ -2,7 +2,11 @@ package us.plpl.uhc.game.states;
 
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
-
+/**
+ * 
+ * @author Justin Brubaker
+ *
+ */
 public class StartupState extends BasicState {
 
 	public StartupState() {

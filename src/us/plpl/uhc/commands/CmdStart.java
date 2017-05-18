@@ -13,7 +13,11 @@ import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.References;
 import us.plpl.uhc.utils.ColorManager;
 import us.plpl.uhc.utils.PlayerSpreaderManager;
-
+/**
+ * 
+ * @author ComputerDude
+ *
+ */
 public class CmdStart implements CommandExecutor {
 
 	private static PlusUHC plugin;

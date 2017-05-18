@@ -10,6 +10,8 @@ import us.plpl.uhc.game.states.BasicState;
 import us.plpl.uhc.game.states.EndingState;
 import us.plpl.uhc.game.states.InstructionsState;
 import us.plpl.uhc.game.states.ResetState;
+import us.plpl.uhc.game.states.StageOneState;
+import us.plpl.uhc.game.states.StageTwoState;
 import us.plpl.uhc.game.states.StartupState;
 import us.plpl.uhc.game.states.WaitState;
 
@@ -92,8 +94,8 @@ public class GameManager {
 		states.put(GameState.WAIT, new WaitState());
 		states.put(GameState.INSTRUCTIONS, new InstructionsState());
 		states.put(GameState.STARTUP, new StartupState());
-			
-		// TODO Add missing states
+		states.put(GameState.STAGEONE, new StageOneState());
+		states.put(GameState.STAGETWO, new StageTwoState());
 		
 		states.put(GameState.ENDING, new EndingState());
 		states.put(GameState.RESET, new ResetState());

@@ -5,6 +5,7 @@ import org.bukkit.command.ConsoleCommandSender;
 
 import us.plpl.uhc.utils.ColorManager;
 
+
 public class References {
 
 	public static String prefix = ColorManager.color("&f&l< &6&lU&a&lH&c&lC &f&l> ");
