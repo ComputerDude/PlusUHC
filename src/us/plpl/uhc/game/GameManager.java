@@ -1,17 +1,17 @@
-package com.computerdude.uhc.game;
+package us.plpl.uhc.game;
 
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
-import com.computerdude.uhc.PlusUHC;
-import com.computerdude.uhc.game.states.BasicState;
-import com.computerdude.uhc.game.states.EndingState;
-import com.computerdude.uhc.game.states.InstructionsState;
-import com.computerdude.uhc.game.states.ResetState;
-import com.computerdude.uhc.game.states.StartupState;
-import com.computerdude.uhc.game.states.WaitState;
+import us.plpl.uhc.PlusUHC;
+import us.plpl.uhc.game.states.BasicState;
+import us.plpl.uhc.game.states.EndingState;
+import us.plpl.uhc.game.states.InstructionsState;
+import us.plpl.uhc.game.states.ResetState;
+import us.plpl.uhc.game.states.StartupState;
+import us.plpl.uhc.game.states.WaitState;
 
 
 /**

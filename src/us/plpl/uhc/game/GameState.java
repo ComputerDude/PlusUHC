@@ -1,4 +1,4 @@
-package com.computerdude.uhc.game;
+package us.plpl.uhc.game;
 
 public enum GameState {
 

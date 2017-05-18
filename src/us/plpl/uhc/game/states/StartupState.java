@@ -1,7 +1,7 @@
-package com.computerdude.uhc.game.states;
+package us.plpl.uhc.game.states;
 
-import com.computerdude.uhc.game.GameManager;
-import com.computerdude.uhc.game.GameState;
+import us.plpl.uhc.game.GameManager;
+import us.plpl.uhc.game.GameState;
 
 public class StartupState extends BasicState {
 

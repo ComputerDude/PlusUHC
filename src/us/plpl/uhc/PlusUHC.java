@@ -1,7 +1,8 @@
-package com.computerdude.uhc;
+package us.plpl.uhc;
+
+import static us.plpl.uhc.References.console;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import static com.computerdude.uhc.References.console;
 
 public class PlusUHC extends JavaPlugin {
 	

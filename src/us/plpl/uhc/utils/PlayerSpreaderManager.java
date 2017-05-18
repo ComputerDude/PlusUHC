@@ -1,4 +1,6 @@
-package com.computerdude.uhc.utils;
+package us.plpl.uhc.utils;
+
+import static us.plpl.uhc.References.WORLD_NAME;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,9 +19,7 @@ import org.bukkit.entity.Player;
  * @author Justin Brubaker
  *
  */
-public class PlayerSpreaderManager {
-
-	private static String worldName = "world";
+public class PlayerSpreaderManager {	
 
 	/**
 	 * Teleports one player to a random location in the world name in
@@ -36,7 +36,7 @@ public class PlayerSpreaderManager {
 
 			boolean noPlayers = true;
 			
-			for (Entity e : Bukkit.getWorld(worldName).getNearbyEntities(loc, 100, 30, 100)) {
+			for (Entity e : Bukkit.getWorld(WORLD_NAME).getNearbyEntities(loc, 100, 30, 100)) {
 				if (e.getType().equals(EntityType.PLAYER)) {
 					noPlayers = false;
 				}
@@ -62,7 +62,7 @@ public class PlayerSpreaderManager {
 		int x = ThreadLocalRandom.current().nextInt(-1000, 1001);
 		int z = ThreadLocalRandom.current().nextInt(-1000, 1001);
 
-		loc = new Location(Bukkit.getWorld(worldName), x, Bukkit.getWorld(worldName).getHighestBlockYAt(x, z), z);
+		loc = new Location(Bukkit.getWorld(WORLD_NAME), x, Bukkit.getWorld(WORLD_NAME).getHighestBlockYAt(x, z), z);
 
 		return loc;
 	}

@@ -1,4 +1,4 @@
-package com.computerdude.uhc.commands;
+package us.plpl.uhc.commands;
 
 import java.util.ArrayList;
 
@@ -9,10 +9,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.computerdude.uhc.PlusUHC;
-import com.computerdude.uhc.References;
-import com.computerdude.uhc.utils.ColorManager;
-import com.computerdude.uhc.utils.PlayerSpreaderManager;
+import us.plpl.uhc.PlusUHC;
+import us.plpl.uhc.References;
+import us.plpl.uhc.utils.ColorManager;
+import us.plpl.uhc.utils.PlayerSpreaderManager;
 
 public class CmdStart implements CommandExecutor {
 

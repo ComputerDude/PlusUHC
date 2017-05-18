@@ -1,4 +1,4 @@
-package com.computerdude.uhc.listeners;
+package us.plpl.uhc.listeners;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
