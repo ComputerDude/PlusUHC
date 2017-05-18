@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 
 /**
  * 
- * Spreads players between X = 1000 Z= 1000 and X -1000 Z=1000
+ * Spreads players between X = 1000 Z= 1000 and X -1000 Z=-1000
  * 
  * @author Justin Brubaker
  *

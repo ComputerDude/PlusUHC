@@ -2,9 +2,6 @@ package us.plpl.uhc.game;
 
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-
 import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.game.states.BasicState;
 import us.plpl.uhc.game.states.DeathmatchState;
@@ -29,7 +26,7 @@ public class GameManager {
 	private static int max_players;
 	private static int timer = 0;
 	private static HashMap<GameState, BasicState> states = new HashMap<GameState, BasicState>();
-	public static final Location LOBBY = new Location(Bukkit.getWorld("world"), 0, 4, 0);
+	
 	
 	public static GameState getCurrentState() {
 		return currentState.getState();

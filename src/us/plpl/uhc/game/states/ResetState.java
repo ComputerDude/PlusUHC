@@ -3,6 +3,7 @@ package us.plpl.uhc.game.states;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import us.plpl.uhc.References;
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
 /**
@@ -25,7 +26,7 @@ public class ResetState extends BasicState {
 		 */
 		
 		for (Player p : Bukkit.getOnlinePlayers()) {
-			p.teleport(GameManager.LOBBY);
+			p.teleport(References.LOBBY);
 		}
 
 	}

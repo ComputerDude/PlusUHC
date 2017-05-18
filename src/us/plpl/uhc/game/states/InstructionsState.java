@@ -40,7 +40,7 @@ public class InstructionsState extends BasicState {
 	@Override
 	public void codeOnFinish() {
 		
-		GameManager.setCurrentState(GameState.STARTUP);
+		GameManager.setCurrentState(GameState.STAGEONE);
 		
 	}
 
