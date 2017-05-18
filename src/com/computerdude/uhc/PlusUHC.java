@@ -8,7 +8,8 @@ public class PlusUHC extends JavaPlugin {
 	public void onEnable() {
 		if(this.getConfig().getBoolean("FirstStartup") == true) {
 			this.getConfig().set("FirstStartup", false);
-			
+			this.saveConfig();
+			this.reloadConfig();
 		}
 	}
 	
