@@ -4,6 +4,8 @@ import static us.plpl.uhc.References.console;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import us.plpl.uhc.game.GameManager;
+
 public class PlusUHC extends JavaPlugin {
 	
 	private static PlusUHC plugin = null;
@@ -19,6 +21,7 @@ public class PlusUHC extends JavaPlugin {
 		}*/ // Probably unneeded.
 		
 		saveDefaultConfig(); // Better method for saving config.
+		GameManager.initStates();
 		
 		console.sendMessage("Plus+ UHC enabled!");
 	}

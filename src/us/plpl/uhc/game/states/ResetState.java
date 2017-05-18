@@ -5,7 +5,11 @@ import org.bukkit.entity.Player;
 
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
-
+/**
+ * 
+ * @author Justin Brubaker
+ *
+ */
 public class ResetState extends BasicState {
 
 	public ResetState() {

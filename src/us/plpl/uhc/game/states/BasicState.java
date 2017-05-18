@@ -1,7 +1,11 @@
 package us.plpl.uhc.game.states;
 
 import us.plpl.uhc.game.GameState;
-
+/**
+ * 
+ * @author Justin Brubaker
+ *
+ */
 public abstract class BasicState {
 
 	private GameState myState;
