@@ -25,7 +25,7 @@ public class PlusUHC extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		
-		plugin = null; // Prevent a momory leak.
+		plugin = null; // Prevent a memory leak.
 	}
 	
 	/**
