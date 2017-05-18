@@ -7,6 +7,7 @@ import org.bukkit.Location;
 
 import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.game.states.BasicState;
+import us.plpl.uhc.game.states.DeathmatchState;
 import us.plpl.uhc.game.states.EndingState;
 import us.plpl.uhc.game.states.InstructionsState;
 import us.plpl.uhc.game.states.ResetState;
@@ -96,7 +97,7 @@ public class GameManager {
 		states.put(GameState.STARTUP, new StartupState());
 		states.put(GameState.STAGEONE, new StageOneState());
 		states.put(GameState.STAGETWO, new StageTwoState());
-		
+		states.put(GameState.DEATHMATCH, new DeathmatchState());
 		states.put(GameState.ENDING, new EndingState());
 		states.put(GameState.RESET, new ResetState());
 		GameManager.setCurrentState(GameState.WAIT);	
