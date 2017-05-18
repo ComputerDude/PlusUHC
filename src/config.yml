@@ -1,2 +1,5 @@
 FirstStartup: true
 DoubleHealth: true
+game:
+  max_players: 64
+  min_players: 2

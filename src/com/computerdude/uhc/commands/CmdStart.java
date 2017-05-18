@@ -23,6 +23,8 @@ public class CmdStart implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
 		if (cmd.getName().equalsIgnoreCase("start")) {
+			
+			// TODO move all starup to the proper states
 			// TODO 20 second Timer System
 			for (Player p : Bukkit.getOnlinePlayers()) {
 				if (plugin.getConfig().getBoolean("DoubleHealth") == true) {
