@@ -6,6 +6,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import us.plpl.uhc.commands.CmdOption;
+import us.plpl.uhc.commands.CmdStart;
+import us.plpl.uhc.commands.CmdTestPregen;
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.listeners.PlayerJoinListener;
 
@@ -17,16 +20,15 @@ public class PlusUHC extends JavaPlugin {
 	public void onEnable() {		
 		plugin = this; // Allow getting the plugin instance from other classes.
 		
-		/*if(this.getConfig().getBoolean("FirstStartup") == true) {
-			this.getConfig().set("FirstStartup", false);
-			this.saveConfig();
-			this.reloadConfig();
-		}*/ // Probably unneeded.
-		
 		saveDefaultConfig(); // Better method for saving config.
+		
 		GameManager.initStates();
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new PlayerJoinListener(), plugin);
+		
+		getCommand("start").setExecutor(new CmdStart());
+		getCommand("option").setExecutor(new CmdOption());
+		getCommand("testpregen").setExecutor(new CmdTestPregen());
 		
 		Bukkit.getScheduler().runTaskTimer(plugin, new Runnable() {
 			

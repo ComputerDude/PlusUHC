@@ -9,3 +9,5 @@ commands:
     description: Allows you to set game options. Works like /gamerule
   start:
     description: Starts game using current settings.
+  testpregen:
+    description: Tests the pregen functions.  

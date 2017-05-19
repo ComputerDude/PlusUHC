@@ -12,6 +12,8 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import us.plpl.uhc.References;
+
 /**
  * 
  * Spreads players between X = 1000 Z= 1000 and X -1000 Z=-1000
@@ -36,9 +38,11 @@ public class PlayerSpreaderManager {
 
 			boolean noPlayers = true;
 			
-			for (Entity e : Bukkit.getWorld(WORLD_NAME).getNearbyEntities(loc, 100, 30, 100)) {
+			for (Entity e : Bukkit.getWorld(WORLD_NAME).getNearbyEntities(loc, 50, 30, 50)) {
 				if (e.getType().equals(EntityType.PLAYER)) {
+					Debug.send("Found player: " + e.getName() + " nearby " + loc.toString());
 					noPlayers = false;
+					break;
 				}
 			}
 			
@@ -59,8 +63,8 @@ public class PlayerSpreaderManager {
 	private static Location getRandomLocation() {
 		Location loc = null;
 
-		int x = ThreadLocalRandom.current().nextInt(-1000, 1001);
-		int z = ThreadLocalRandom.current().nextInt(-1000, 1001);
+		int x = ThreadLocalRandom.current().nextInt(References.min_x, (References.max_x + 1));
+		int z = ThreadLocalRandom.current().nextInt(References.min_z, (References.max_z + 1));
 
 		loc = new Location(Bukkit.getWorld(WORLD_NAME), x, Bukkit.getWorld(WORLD_NAME).getHighestBlockYAt(x, z), z);
 
