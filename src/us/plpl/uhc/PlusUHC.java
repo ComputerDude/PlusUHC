@@ -7,7 +7,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import us.plpl.uhc.game.GameManager;
-import us.plpl.uhc.listeners.EntityRegenerateListener;
 import us.plpl.uhc.listeners.PlayerJoinListener;
 
 public class PlusUHC extends JavaPlugin {
@@ -27,7 +26,6 @@ public class PlusUHC extends JavaPlugin {
 		saveDefaultConfig(); // Better method for saving config.
 		GameManager.initStates();
 		PluginManager pm = Bukkit.getPluginManager();
-		pm.registerEvents(new EntityRegenerateListener(), plugin);
 		pm.registerEvents(new PlayerJoinListener(), plugin);
 		
 		Bukkit.getScheduler().runTaskTimer(plugin, new Runnable() {
