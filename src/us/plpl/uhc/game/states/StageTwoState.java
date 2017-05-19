@@ -1,7 +1,11 @@
 package us.plpl.uhc.game.states;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
+import us.plpl.uhc.utils.ColorManager;
 
 public class StageTwoState extends BasicState {
 
@@ -13,7 +17,9 @@ public class StageTwoState extends BasicState {
 	@Override
 	public void codeOnStart() {
 	
-		// Announce world border and start it shrinking
+		for(Player p : Bukkit.getOnlinePlayers()) {
+			p.sendTitle(ColorManager.color("&c&lWORLDBORDERS"), ColorManager.color("&c&lHAVE STARTED SHRINKING"), 10, 60, 10);
+		}
 
 	}
 
