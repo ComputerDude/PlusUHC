@@ -11,6 +11,7 @@ import us.plpl.uhc.commands.CmdStart;
 import us.plpl.uhc.commands.CmdTestPregen;
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.listeners.PlayerJoinListener;
+import us.plpl.uhc.utils.WorldManager;
 
 public class PlusUHC extends JavaPlugin {
 	
@@ -43,7 +44,7 @@ public class PlusUHC extends JavaPlugin {
 	
 	@Override
 	public void onDisable() {
-		
+		Bukkit.getScheduler().cancelTask(WorldManager.getPreGenTaskNumber());
 		plugin = null; // Prevent a memory leak.
 	}
 	

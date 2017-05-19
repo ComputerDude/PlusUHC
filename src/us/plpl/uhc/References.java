@@ -14,7 +14,7 @@ public class References {
 	public static final String LOBBY_WORLD_NAME = "world";
 	public static Location LOBBY = new Location(Bukkit.getWorld(LOBBY_WORLD_NAME), 0, Bukkit.getWorld(LOBBY_WORLD_NAME).getHighestBlockYAt(0, 0), 0);
 	public static boolean debug = true;
-	public static int chunksPerSecond = 2;
+	public static int chunksPerTry = 54;
 	
 	// World size
 	public static int max_x = 1000;

@@ -8,6 +8,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Difficulty;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import org.bukkit.scheduler.BukkitTask;
 
 import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.References;
@@ -21,9 +22,9 @@ import static us.plpl.uhc.References.WORLD_NAME;
 public class WorldManager {
 	
 	private static boolean currentlyPreGenerating = false;
-	private static int preGenTaskNumber = -1;
-	private static Chunk[] chunksToGen;
-	private static int lastChunk = 0;
+	private static int preGenTaskNumber = -1;	
+	public static int chunksDone = 0;
+	public static double calculatedTotal = 0;
 	
 	/**
 	 * Generates a new world for UHC.
@@ -50,7 +51,7 @@ public class WorldManager {
 		Debug.send("Finished new world generation.");
 	}
 	
-	public static void preGenerateChunks() {
+	/*public static void preGenerateChunks() {
 		
 		HashSet<Chunk> chunks = new HashSet<Chunk>();
 		for (int x = References.min_x; x <= References.max_x; x = x + 16) {
@@ -71,6 +72,8 @@ public class WorldManager {
 		        
 				if (lastChunk + 1 == chunksToGen.length) {
 					Debug.send("Done pre generating.");
+					lastChunk = 0;
+					Bukkit.getScheduler().cancelTask(preGenTaskNumber);
 				}
 				
 				for (int i = 0; i < References.chunksPerSecond; i++) {
@@ -82,7 +85,77 @@ public class WorldManager {
 				
 				Debug.send("Generated chunks. Last: " + lastChunk);
 			}
-		}, 0, 20);
+		}, 0, 10*20);
+	}*/
+	
+	public static void preGenerateChunks() {
+		calculatedTotal = (((References.max_x -References.min_x) * (References.max_z - References.min_z)) / 256);
+		BukkitTask t = Bukkit.getScheduler().runTaskAsynchronously(PlusUHC.getInstance(), new Runnable() {
+			
+			@Override
+			public void run() {
+				int chunksDone = 0;
+				
+				for (int x = References.min_x; x <= References.max_x; x = x + 16) {
+				       
+		            for (int z = References.min_z; z <= References.max_z; z = z + 16) {
+		            	if (chunksDone < References.chunksPerTry) {
+		            		final int fx = x;
+		            		final int fz = z;
+		            		
+		            		Bukkit.getScheduler().runTask(PlusUHC.getInstance(), new Runnable() {
+								public void run() {
+									loadChunkAt(fx, fz);
+								}
+							});
+		            		chunksDone = chunksDone + 1;
+		            	} else {
+		            		try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								Debug.send("Interrupted");
+								e.printStackTrace();
+							}
+		            		chunksDone = 0;
+		            		final int fx = x;
+		            		final int fz = z;
+		            		
+		            		Bukkit.getScheduler().runTask(PlusUHC.getInstance(), new Runnable() {
+								public void run() {
+									loadChunkAt(fx, fz);
+									double percent = (((double) WorldManager.chunksDone / calculatedTotal)) * (int) 100;
+									int secondsLeft = (int) ((calculatedTotal - WorldManager.chunksDone) * References.chunksPerTry);
+									
+									Bukkit.broadcastMessage(ColorManager.color("&cPregen " + percent + " finished. Approx. " + secondsLeft + " seconds left."));
+								}
+							});
+		            		chunksDone = chunksDone + 1;
+		            	}		            	
+		            }
+		           
+		        }
+				
+				Bukkit.getScheduler().runTaskLater(PlusUHC.getInstance(), new Runnable() {
+					
+					@Override
+					public void run() {
+						Bukkit.broadcastMessage(ColorManager.color("Finished " + WorldManager.chunksDone + " chunks."));						
+					}
+				}, 5*20);
+				
+			}
+		
+		});
+		
+		preGenTaskNumber = t.getTaskId();
+	}
+	
+	public static void loadChunkAt(int x, int z) {
+		Chunk c = Bukkit.getWorld(WORLD_NAME).getChunkAt(x, z);
+    	c.load(true);
+    	c.unload();
+    	chunksDone = chunksDone + 1;    	
+    	//Debug.send("Done chunk at: X:" +c.getX() + " Z:" + c.getZ());
 	}
 	
 	public static int getPreGenTaskNumber() {
