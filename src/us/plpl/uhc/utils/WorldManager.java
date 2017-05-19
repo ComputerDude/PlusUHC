@@ -1,6 +1,7 @@
 package us.plpl.uhc.utils;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.HashSet;
 
 import org.bukkit.Bukkit;
@@ -124,9 +125,11 @@ public class WorldManager {
 								public void run() {
 									loadChunkAt(fx, fz);
 									double percent = (((double) WorldManager.chunksDone / calculatedTotal)) * (int) 100;
-									int secondsLeft = (int) ((calculatedTotal - WorldManager.chunksDone) * References.chunksPerTry);
+									//int secondsLeft = (int) ((calculatedTotal - WorldManager.chunksDone) * (double) 3);
+									DecimalFormat df = new DecimalFormat("#,###,##0.00");
 									
-									Bukkit.broadcastMessage(ColorManager.color("&cPregen " + percent + " finished. Approx. " + secondsLeft + " seconds left."));
+									
+									Bukkit.broadcastMessage(ColorManager.color("&cPregen " + df.format(percent) + "% finished."));
 								}
 							});
 		            		chunksDone = chunksDone + 1;
