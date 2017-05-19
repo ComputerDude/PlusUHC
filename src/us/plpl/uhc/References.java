@@ -10,7 +10,9 @@ public class References {
 
 	public static String prefix = ColorManager.color("&f&l< &6&lU&a&lH&c&lC &f&l> ");
 	public static ConsoleCommandSender console = Bukkit.getConsoleSender();
-	public static final String WORLD_NAME = "world";
-	public static Location LOBBY = new Location(Bukkit.getWorld(WORLD_NAME), 0, Bukkit.getWorld(WORLD_NAME).getHighestBlockYAt(0, 0), 0);
+	public static final String WORLD_NAME = "UHC";
+	public static final String LOBBY_WORLD_NAME = "world";
+	public static Location LOBBY = new Location(Bukkit.getWorld(LOBBY_WORLD_NAME), 0, Bukkit.getWorld(LOBBY_WORLD_NAME).getHighestBlockYAt(0, 0), 0);
+	public static boolean debug = true;
 	
 }
