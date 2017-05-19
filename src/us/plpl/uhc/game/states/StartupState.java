@@ -8,6 +8,7 @@ import us.plpl.uhc.PlusUHC;
 import us.plpl.uhc.References;
 import us.plpl.uhc.game.GameManager;
 import us.plpl.uhc.game.GameState;
+import us.plpl.uhc.options.OptionManager;
 import us.plpl.uhc.utils.ColorManager;
 import us.plpl.uhc.utils.PlayerSpreaderManager;
 /**
@@ -30,17 +31,19 @@ public class StartupState extends BasicState {
 		 */
 		
 		for (Player p : Bukkit.getOnlinePlayers()) {
-			if (PlusUHC.getInstance().getConfig().getBoolean("DoubleHealth") == true) {
+			if (PlusUHC.getInstance().getConfig().getBoolean("DoubleHealth")) { // Double health option
 				p.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40.0);
 			}
+			
 			p.sendMessage(References.prefix + ColorManager.color("&6&lEnabled Options:"));
-			/*if(!enabledOptions.isEmpty()) {
-				for(String str : enabledOptions) {
+			
+			if(!OptionManager.getEnabledOptions().isEmpty()) {
+				for(String str : OptionManager.getEnabledOptions()) {
 					p.sendMessage("&6&l" + str);
 				}
 			} else {
 				p.sendMessage("&c&lNone");
-			}*/
+			}
 			
 			// TODO Options Enabled list
 			PlayerSpreaderManager.spreadPlayer(p);

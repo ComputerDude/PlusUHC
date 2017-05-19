@@ -8,6 +8,6 @@ public enum GameState {
 	 * RESET | Everything to reset for a new game. Clear inventories, teleport back to lobby, generate new world? 
 	 * DEATHMATCH = Deathmatch. Telport to deathmatch location? Adventure mode? etc
 	*/
-	WAIT, INSTRUCTIONS, STARTUP, STAGEONE, STAGETWO, DEATHMATCH, ENDING, RESET;
+	WAIT, STARTUP, INSTRUCTIONS, STAGEONE, STAGETWO, DEATHMATCH, ENDING, RESET;
 	
 }
