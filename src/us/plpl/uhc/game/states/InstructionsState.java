@@ -37,7 +37,8 @@ public class InstructionsState extends BasicState {
 			@Override
 			public void run() {
 				for (Player p : Bukkit.getOnlinePlayers()) {
-					// TODO TITLE HERE
+					p.sendTitle(ColorManager.color("&aMay the odds"), ColorManager.color("&2be ever in your favor"), 10, 60,
+							10);	
 				}				
 			}
 		}, 5*20);
