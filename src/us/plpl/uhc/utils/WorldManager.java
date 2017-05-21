@@ -2,8 +2,6 @@ package us.plpl.uhc.utils;
 
 import java.io.File;
 import java.text.DecimalFormat;
-import java.util.HashSet;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Difficulty;
