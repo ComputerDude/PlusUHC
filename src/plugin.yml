@@ -3,6 +3,7 @@ version: 0.0
 authors: [ComputerDude, JustBru00]
 main: us.plpl.uhc.PlusUHC
 prefix: UHC
+depend: [ActionBarAPI]
 
 commands:
   option:

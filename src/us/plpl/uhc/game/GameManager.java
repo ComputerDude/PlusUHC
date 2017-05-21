@@ -53,7 +53,9 @@ public class GameManager {
 	
 	public static void updateDisplays() {
 		
-		// TODO Action bar timer stuff
+		if (!getCurrentState().equals(GameState.WAIT)) { // Anything but lobby/wait
+			PlusUHC.sendActionBarToAll(getTimeLeftFormated() + " &8&l| &6Current Stage: " + getCurrentState().toString().toLowerCase());
+		}
 		
 	}
 	

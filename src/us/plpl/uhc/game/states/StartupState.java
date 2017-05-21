@@ -45,12 +45,11 @@ public class StartupState extends BasicState {
 				p.sendMessage("&c&lNone");
 			}
 			
-			// TODO Options Enabled list
-			PlayerSpreaderManager.spreadPlayer(p);
-			p.sendTitle(ColorManager.color("&aMay the odds"), ColorManager.color("&2be ever in your favor"), 10, 60,
-					10);
 			
-			// TODO Block disabled here
+			PlayerSpreaderManager.spreadPlayer(p); // May have to make spreading delayed in future with lots of players.
+			
+			p.sendTitle(ColorManager.color("&aMay the odds"), ColorManager.color("&2be ever in your favor"), 10, 60,
+					10);				
 		}
 				
 	}
