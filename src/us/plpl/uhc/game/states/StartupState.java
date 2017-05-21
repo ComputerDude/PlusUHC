@@ -39,10 +39,10 @@ public class StartupState extends BasicState {
 			
 			if(!OptionManager.getEnabledOptions().isEmpty()) {
 				for(String str : OptionManager.getEnabledOptions()) {
-					p.sendMessage("&6&l" + str);
+					p.sendMessage(ColorManager.color("&6&l" + str));
 				}
 			} else {
-				p.sendMessage("&c&lNone");
+				p.sendMessage(ColorManager.color("&c&lNone"));
 			}
 			
 			
