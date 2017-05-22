@@ -46,7 +46,7 @@ public class PlayerSpreaderManager {
 				}
 			}
 			
-			if (!noPlayers || type.equals(Material.LAVA) || type.equals(Material.STATIONARY_LAVA)) {
+			if (!noPlayers || type.equals(Material.LAVA) || type.equals(Material.STATIONARY_LAVA) || type.equals(Material.WATER) || type.equals(Material.STATIONARY_WATER)) {
 				// Just let it pick a new spot.
 			} else {
 				break;
