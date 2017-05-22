@@ -66,7 +66,7 @@ public class PlayerSpreaderManager {
 		int x = ThreadLocalRandom.current().nextInt(References.min_x, (References.max_x + 1));
 		int z = ThreadLocalRandom.current().nextInt(References.min_z, (References.max_z + 1));
 
-		loc = new Location(Bukkit.getWorld(WORLD_NAME), x, Bukkit.getWorld(WORLD_NAME).getHighestBlockYAt(x, z), z);
+		loc = new Location(Bukkit.getWorld(WORLD_NAME), x + .5, Bukkit.getWorld(WORLD_NAME).getHighestBlockYAt(x, z), z + .5);
 
 		return loc;
 	}
