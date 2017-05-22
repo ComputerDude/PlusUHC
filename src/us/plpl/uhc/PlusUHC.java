@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.connorlinfoot.actionbarapi.ActionBarAPI;
 
 import us.plpl.uhc.commands.CmdOption;
+import us.plpl.uhc.commands.CmdSetTime;
 import us.plpl.uhc.commands.CmdStart;
 import us.plpl.uhc.commands.CmdTestPregen;
 import us.plpl.uhc.game.GameManager;
@@ -36,6 +37,7 @@ public class PlusUHC extends JavaPlugin {
 		getCommand("start").setExecutor(new CmdStart());
 		getCommand("option").setExecutor(new CmdOption());
 		getCommand("testpregen").setExecutor(new CmdTestPregen());
+		getCommand("settime").setExecutor(new CmdSetTime());
 		
 		Bukkit.getScheduler().runTaskTimer(plugin, new Runnable() {
 			

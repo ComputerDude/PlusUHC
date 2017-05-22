@@ -12,3 +12,5 @@ commands:
     description: Starts game using current settings.
   testpregen:
     description: Tests the pregen functions.  
+  settime:
+    description: Sets the time remaining in the current stage.
